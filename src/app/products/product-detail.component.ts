@@ -11,13 +11,15 @@ import { IProduct } from './product';
 export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'Product Detail';
   product: IProduct;
+
   constructor(private route: ActivatedRoute, private router: Router) { }
+  
   onBack(): void {
-    
+
   }
   ngOnInit() {
     let id = +this.route.snapshot.paramMap.get('id'); //string to number
-    this.pageTitle += `: ${id}`;
+    this.pageTitle +=  `: ${id}`;
     this.product = {
       "productId": 1,
       "productName": "Leaf Rake",
