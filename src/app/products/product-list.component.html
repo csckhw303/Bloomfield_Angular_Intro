@@ -20,8 +20,8 @@
           <thead>
             <tr>
               <th>
-                <button class='btn btn-primary'>
-                  Show Image
+                <button class='btn btn-primary' (click)='toggleImage()'>
+                 {{showImage ? 'Hide' : 'Show'}}  Image
                 </button>
               </th>
               <th>Product</th>
@@ -34,16 +34,21 @@
           <tbody>
             <tr *ngFor='let product of products'>
               <td></td>
-              <td>{{ product.productName }}</td>
-              <td>{{ product.productCode }}</td>
+              <td>{{ product.productName  }}</td>
+              <td>{{ product.productCode | lowercase | converToSpace: '-' }}</td>
               <td>{{ product.releaseDate }}</td>
               <td>{{ product.price }}</td>
-              <td>{{ product.starRating }}</td>
+              <td><pm-star [rating]='product.starRating'>
+                
+              </pm-star></td>
             </tr>
           </tbody>
         </table>
       </div>
-  
+      
+      <input   [(ngModel)]="userName" > 
+      <button (click)="userLogin()" ></button>
+      <div>{{userName}}</div>
     </div>
   
   </div>

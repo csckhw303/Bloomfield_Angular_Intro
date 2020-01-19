@@ -4,7 +4,9 @@ import { Component } from "@angular/core";
     templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
+  showImage: boolean = false;
    pageTitle: string ='Product List';
+   userName: string = "";
    products: any[] = [
     {
       "productId": 1,
@@ -57,4 +59,11 @@ export class ProductListComponent {
       "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ]
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
+
+  userLogin(): void {
+    this.userName = this.userName + " not success";
+  }
 }
