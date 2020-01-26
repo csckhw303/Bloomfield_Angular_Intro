@@ -10,6 +10,7 @@ import {ConvertToSpacePipe} from './shared/converToSpace.component';
 import { StarComponent } from './shared/star.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductDetailComponent } from './products/product-detail.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ProductDetailComponent } from './products/product-detail.component';
     ProductDetailComponent
   ],
   imports: [
-    BrowserModule,ViewModule,FormsModule,
+    BrowserModule,ViewModule,FormsModule,HttpClientModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id', component: ProductDetailComponent },

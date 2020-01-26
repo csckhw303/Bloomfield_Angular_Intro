@@ -34,11 +34,15 @@
           <tbody>
             <tr *ngFor='let product of products'>
               <td></td>
-              <td>{{ product.productName  }}</td>
+              <td>
+                  <a [routerLink]="['/products'  , product.productId ]"  
+                  >  {{ product.productName  }} </a>
+              
+              </td>
               <td>{{ product.productCode | lowercase | converToSpace: '-' }}</td>
               <td>{{ product.releaseDate }}</td>
               <td>{{ product.price }}</td>
-              <td><pm-star [rating]='product.starRating'>
+              <td><pm-star [rating]='product.starRating' (notify)='onNotify($event)'>
                 
               </pm-star></td>
             </tr>
